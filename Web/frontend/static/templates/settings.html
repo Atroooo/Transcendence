@@ -1,0 +1,115 @@
+<div class="notify">
+</div>
+
+<div class="container">
+    <div class="left">
+        <div class="imageUser">
+            <img src="" alt="logo" id="profilePicture" class="avatar">
+            <input type="file" name="image" id="file-user__input" class="inputfile"/>
+            <div class="change-picture">
+                <label for="file-user__input" id="uploadBtn">
+                    <i class='bx bxs-camera bx-xs icon'></i>
+                </label>
+            </div>
+        </div>
+        <div class="settings">
+            <div class="infoUser-detail">
+                <div class="infoUserBox">
+                    <i class='bx bx-message-dots bx-sm icon'></i>
+                    <textarea id="bio" class="input-field" name="bio" style="width: 100%;" data-i18n-placeholder="placeholder.bio" maxlength="180"></textarea>
+                    </span>
+                </div>
+            </div>
+            <div class="infoUser-detail">
+                <div class="infoUserBox">    
+                    <i class='bx bx-user bx-sm icon'></i>
+                    <input type="text" class="name" id="name" maxlength="15">
+                    <div class="validate" id="validate_name">
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </div>
+                    <span class="uniqueUsername" data-i18n="uniqueUsername">Ce nom d'utilisateur est déjà pris</span>
+                </div>
+            </div>
+            <div class="infoUser-detail">
+                <div class="infoUserBox" id="forbiddenMail">
+                    <i class='bx bx-mail-send bx-sm icon'></i>
+                    <input type="text" class="mail" id="email">
+                    <div class="validate" id="validate_email">
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="wrap__stats">
+            <div class="statistics">
+                <p data-i18n="settings__win_rate" class="stat__title"></p>
+                <svg id="progress-circle" width="200" height="200"></svg>
+            </div>
+            <div>
+                <div class="statistics__horizontal">
+                    <p data-i18n="settings__games_played" class="stat__title"></p>
+                    <div class="games__played">
+                        <img src="/static/assets/settings/pong.svg"
+                        style="width: 50px; height: 50px;">
+                        <p class="stat__count" id="games__count" style="--from: 0; --to: ; --duration: 5s; --timing: ease"></p>
+                    </div>
+                </div>
+                <div class="statistics__horizontal">
+                    <p data-i18n="settings__win_streak" class="stat__title"></p>
+                    <div class="win__streak">
+                        <img src="/static/assets/settings/fire.svg" alt="logo" id="fire" style="width: 50px; height: 50px;">
+                        <p class="stat__count" id="winStreak__count" style="--from: 0; --to: ; --duration: 5s; --timing: ease"></p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="statistics__horizontal">
+                    <p data-i18n="settings__most_played" class="stat__title"></p>
+                    <div class="games__played">
+                        <img src="/static/assets/settings/boxe.svg" style="width: 50px; height: 50px;">
+                        <p class="stat__name_player" id="most__played"></p>
+                    </div>
+                </div>
+                <div class="statistics__horizontal">
+                    <p data-i18n="settings__most_won" class="stat__title"></p>
+                    <div class="win__streak">
+                        <img src="/static/assets/settings/winner.svg" alt="logo" id="fire" style="width: 50px; height: 50px;">
+                        <p class="stat__name_player" id="most__win"></p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="statistics__horizontal">
+                    <p data-i18n="settings__points_scored" class="stat__title"></p>
+                    <div class="games__played">
+                        <img src="/static/assets/settings/ball.svg" style="width: 50px; height: 50px;">
+                        <p class="stat__count" id="points__scored" style="--from: 0; --to: ; --duration: 5s; --timing: ease"></p>
+                    </div>
+                </div>
+                <div class="statistics__horizontal">
+                    <p data-i18n="settings__tournament_wins" class="stat__title"></p>
+                    <div class="win__streak">
+                        <img src="/static/assets/settings/tournament.svg" alt="logo" id="fire" style="width: 50px; height: 50px;">
+                        <p class="stat__count" id="tournament_won" style="--from: 0; --to: ; --duration: 5s; --timing: ease"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="charts">
+            <div class="charts__settings">
+                <canvas id="charts__scatterChart"></canvas>
+            </div>
+            <div class="charts__settings">
+                <canvas id="charts__polar_radar" width="1000" height="400"></canvas>
+            </div>
+        </div>
+        <div class="history">
+            <div class="no__history">
+                <span data-i18n="noHistory"></span>
+                <img src="../../static/assets/tourney/wait.svg">
+            </div>
+        </div>
+    </div>
+</div>

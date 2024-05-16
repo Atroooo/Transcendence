@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@font-face {
+    font-family: 'pixel';
+    src: url('/static/assets/pixel.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.player-waiting {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    flex-direction: column;
+    z-index: 100;
+    width: 30vh;
+    height: 15vh;
+    border-radius: 12px;
+    box-shadow: var(--boxShadow, 0 0 10px 0 rgba(243, 240, 240, 0.2), 0.2);
+    padding: 20px;
+    background-image: url(../../static/assets/pong/waitingscreenlight.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.waiting {
+    color: var(--text-color-dark);
+    text-align: center;
+    font-size: 50px;
+}
+
+.waiting__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+}
+
+#waiting-time {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.container {
+    height: 100vh; 
+    width: 100vw; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.board { 
+  height: 85vh; 
+  width: 80vw; 
+  background-color: black; 
+  border-radius: 14px; 
+} 
+
+.ball { 
+  height: 2%; 
+  width: 1%; 
+  border-radius: 50%; 
+  position: fixed; 
+  top: calc(50% - 15px); 
+  left: calc(50% - 15px); 
+} 
+
+.ball_effect { 
+  height: 100%; 
+  width: 100%; 
+  border-radius: 100px; 
+  animation: spinBall 0.1s linear infinite; 
+  box-shadow: inset 0 0 18px #fff, 
+      inset 6px 0 18px violet, 
+      inset -6px 0 18px #0ff, 
+      inset 6px 0 30px violet, 
+      inset -6px 0 30px #0ff, 
+      0 0 18px #fff, -4px 0 18px
+      violet, 4px 0 18px #0ff; 
+} 
+
+@keyframes spinBall { 
+  100% { 
+      -webkit-transform: rotate(360deg); 
+      transform: rotate(360deg); 
+  } 
+} 
+
+.paddle { 
+  height: 24%; 
+  width: 1%; 
+  position: fixed; 
+} 
+
+.paddle_1 { 
+  top: calc(38%); 
+  left: calc(10vw + 30px); 
+  box-shadow: inset 0 0 18px #fff, 
+      inset -6px 0 18px #f3bad6, 
+      inset 6px 0 18px #0ff, 
+      inset -6px 0 30px #f3bad6, 
+      inset 6px 0 30px #0ff, 
+      0 0 18px #fff, 4px 0 18px
+      #f3bad6, -4px 0 18px #0ff; 
+} 
+
+.paddle_2 { 
+  top: calc(38%); 
+  right: calc(10vw + 30px); 
+  box-shadow: inset 0 0 18px #fff, 
+      inset 6px 0 18px #f3bad6, 
+      inset -6px 0 18px #0ff, 
+      inset 6px 0 30px #f3bad6, 
+      inset -6px 0 30px #0ff, 
+      0 0 18px #fff, -4px 0 18px
+      #f3bad6, 4px 0 18px #0ff; 
+} 
+
+.player_1_score { 
+  height: 3rem; 
+  width: 3rem; 
+  font-size: 3rem;
+  color: rgb(255, 255, 255); 
+  position: fixed; 
+  left: 30vw; 
+  margin-top: 30px;
+  font-family: pixel, 'sans-serif';
+} 
+
+.player_2_score { 
+  height: 50px; 
+  width: 50px; 
+  font-size: 3rem;
+  color: rgb(255, 255, 255); 
+  position: fixed; 
+  left: 70vw; 
+  margin-top: 30px; 
+  font-family: pixel, 'sans-serif';
+} 
+
+.player-win,
+.player-lost {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    border-radius: 12px;
+    box-shadow: var(--boxShadow, 0 0 10px 0 rgba(243, 240, 240, 0.2), 0.2);
+    background-color: black;
+    padding: 20px;
+    font-family: 'pixel', sans-serif;
+}
+
+.display__result_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 30vh;
+    color: white;
+    background-color: #c3dafe;
+    border-radius: 12px;
+    padding: 50px;
+    font-size: 2rem;
+}
+
+.display__result_container img {
+    height: 110%;
+}
+
+.win__pixel,
+.lose__pixel {
+    font-family: 'pixel', sans-serif;
+    font-size: 2.5rem;
+    transform: translate(0, 600%);
+    transition: 3s ease-in;
+}
+
+.win__pixel {
+    animation: colorChangeWin 2s infinite alternate;
+}
+
+.lose__pixel {
+    animation: colorChangeLose 2s infinite alternate;
+}
+
+@keyframes colorChangeLose {
+    from {
+        color: black;
+    }
+    to {
+        color: red;
+    }
+}
+
+@keyframes colorChangeWin {
+    from {
+        color: rgb(0, 0, 0);
+    }
+    to {
+        color: rgb(243, 207, 0)(255, 217, 0);
+    }
+}
+
+
+.primaryButton {
+    font-weight: bold;
+    text-shadow: 1px 1px 0px rgb(47, 47, 47);
+    color: white;
+    height: fit-content;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: 0.25s ease;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'pixel', sans-serif;
+    padding: 10px;
+    border: none;
+    box-shadow: var(--boxShadow, inset 0 calc(var(--borderHeight, .3rem)*-1) 0 0 rgba(0, 0, 0, .2));
+    transform: translate(0, -125%);
+}
+
+.primaryButton:hover {
+    box-shadow: none;
+}
+
+#play-again {
+    padding: 15px;
+    background: var(--nav-color);
+}
+
+.player1_picture,
+.player2_picture {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 30px;
+    position: fixed;
+    opacity: 0.7;
+}
+
+.player1_picture {
+    left: 15vw;
+}
+
+.player2_picture {
+    right: 15vw;
+}

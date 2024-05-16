@@ -1,0 +1,68 @@
+<div class="notify">
+</div>
+
+<div class="main-container">
+    <div class="container active" id="step">
+        <span data-i18n="tournament__create" class="tournament__title"></span>
+        <img src="/static/assets/settings/tournament.svg" id="tournament__svg">
+        <p data-i18n="tournament__challenge" class="tournament__p_create"></p>
+        <div class="left">
+            <li class="tournament__list">
+                <span data-i18n="tournament__name" class="tournament__list_title"></span>
+                <input class="tournament__input" type="text" id="name" maxlength="15">
+            </li>
+            <li class="tournament__list">
+                <span data-i18n="tournament__pseudo" class="tournament__list_title"></span>
+                <input class="tournament__input" type="text" id="pseudo" maxlength="15">
+            </li>
+        </div>
+        <div class="left_next">
+            <li class="tournament__list">
+                <span data-i18n="tournament__number_of_players" id="number_max_of_players" class="tournament__list_title"></span>
+                <div class="options_players">
+                    <button class="tournament__option_button_players">4</button>
+                    <button class="tournament__option_button_players">8</button>
+                    <button class="tournament__option_button_players">16</button>
+                </div>
+            </li>
+            <li class="tournament__list">
+                <button data-i18n="tournament__create" class="tournament__create" id="createTournament"></button>
+            </li>
+        </div>
+        <img src="/static/assets/settings/arrow.svg" id="arrow-next">
+        <img src="/static/assets/settings/arrow_left.svg" id="arrow-left">
+    </div>
+    <div class="container" id="joinStep">
+        <span data-i18n="tournament__join" class="tournament__title"></span>
+        <div class="top">
+            <img src="/static/assets/settings/tournament.svg" id="tournament__svg_bis">
+            <li class="tournament__list">
+                <span data-i18n="tournament__name" class="tournament__list_title"></span>
+                <input class="tournament__input" type="text" maxlength="15" id="joinName">
+            </li>
+            <li class="tournament__list">
+                <span data-i18n="tournament__pseudo" class="tournament__list_title"></span>
+                <input class="tournament__input" type="text" id="joinPseudo">
+            </li>
+            <li class="tournament__list">
+                <button data-i18n="tournament__join_button" class="tournament__create" id="joinTournament"></button>
+            </li>
+        </div>
+        <div class="top_public">
+            <div class="no__history">
+                <span data-i18n="noHistoryJoin"></span>
+                <img src="../../static/assets/tourney/battle.png">
+            </div>
+        </div>
+        <img src="/static/assets/settings/arrow.svg" id="arrow-nextJoin">
+        <span data-i18n="tournament__signal" class="info">click the arrow to view available tournaments</span>
+        <img src="/static/assets/settings/arrow_left.svg" id="arrow-leftJoin">
+    </div>
+    <div class="container" id="ether__tournament">
+        <span data-i18n="tournament__history" class="tournament__title"></span>
+        <div class="no__history_ether">
+            <span data-i18n="noHistoryEnd"></span>
+            <img src="../../static/assets/tourney/wait.svg">
+        </div>
+    </div>
+</div>

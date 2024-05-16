@@ -1,0 +1,49 @@
+footer {
+    background-color: var(--body-color);
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.custom-select {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    background-color: var(--body-color);
+    width: fit-content;
+}
+
+/* Styling for the selected option */
+.select-selected {
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+}
+
+/* Styling for the options container */
+.select-options {
+    display: none;
+    position: absolute;
+    background-color: var(--nav-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    border-radius: 6px;
+    bottom: 100%;
+}
+
+/* Styling for each option */
+.select-options div {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* Highlight selected option */
+.select-options div:hover {
+    background-color: #f4f4f4;
+}

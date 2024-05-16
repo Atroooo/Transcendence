@@ -1,0 +1,37 @@
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.activation {
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--primary-color-light, 0.2);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.activation h1 {
+    color: var(--text-color-dark);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.activation p {
+    color: var(--text-color-dark);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.activation img {
+    width: 200px;
+    height: 200px;
+}

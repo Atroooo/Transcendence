@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+}
+
+body.dark nav {
+    border: 1px solid #393838;
+
+}
+
+nav .nav-bar {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav .nav-bar .sidebarOpen {
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .nav-bar .logo a {
+    font-family: 'Comfortaa', cursive;
+    font-size: 25px;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.menu .logo-toggle {
+    display: none;
+}
+
+.nav-bar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li {
+    margin: 0 5px;
+    list-style: none;
+}
+
+.nav-links li a {
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.profile img {
+    display: flex;
+    justify-self: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+}
+
+.nav-links li a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before {
+    opacity: 1;
+}
+
+.nav-bar .darkLight-lng {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.darkLight-lng .dark-light,
+.darkLight-lng .friendlist {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.dark-light i,
+.friendlist i {
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+}
+
+.dark-light i.sun {
+    opacity: 1;
+    pointer-events: none;
+}
+
+.dark-light i.moon {
+    opacity: 0;
+    pointer-events: auto;
+}
+
+.dark-light.active i.sun {
+    opacity: 0;
+    pointer-events: auto;
+}
+
+.dark-light.active i.moon {
+    opacity: 1;
+    pointer-events: none;
+}
+
+#friend__notification {
+    display: none;
+    transform: translate(220%, -50%);
+    color: var(--intense-red);
+    font-size: 10px;
+    padding: 2px;
+    border-radius: 100%;
+}
+
+.arrow {
+    display: none;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-right: 9px solid transparent;
+    border-left: 9px solid transparent;
+    border-bottom: 9px solid rgba(128, 128, 128);
+    backdrop-filter: blur(3px);
+    transform: translateX(3px);
+    top: 23px;
+}
+
+.displayList {
+    display: none;
+    background: rgba(75, 21, 22, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    backdrop-filter: blur(3px);
+    min-height: 100px;
+    max-height: 600px;
+    width: 300px;
+    margin-top: 10px;
+    position: absolute;
+    transform: translateX(-75%);
+    border-radius: 12px;
+    overflow: auto;
+    cursor: auto;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: grey;
+    color: var(--text-color);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.addFriends {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+    background-color: grey;
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.addFriends i {
+    color: var(--text-color);
+    cursor: pointer;
+    position: relative;
+}
+
+#addFriendIconHide {
+    display: none;
+    position: absolute;
+    left: 73%;
+}
+
+#crossFriendIconHide {
+    display: none;
+    position: absolute;
+    left: 80%;
+    color: var(--intense-red);
+}
+
+.addFriends input {
+    display: none;
+    position: relative;
+    transform: translateX(-10%);
+    width: 70%;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    /* margin-right: 20px; */
+    font-size: 10px;
+    transition: all 0.3s ease;
+}
+
+.friend__request_element {
+    list-style: none;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: begin;
+}
+
+.online {
+    border-radius: 100%;
+    border: 2px solid var(--intense-green);
+}
+
+.offline {
+    border-radius: 100%;
+    border: 2px solid var(--intense-red);
+}
+
+.noFriends {
+    display: none;
+    padding: 10px;
+    text-align: center;
+}
+
+.friend__element {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.friend__request_accept {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20%;
+}
+
+.friend__request_decline {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 30%;
+}
+
+.friend__request_username {
+    font-size: 11px;
+}
+
+.request {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+    background-color: grey;
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.request i {
+    color: var(--text-color);
+    cursor: pointer;
+    position: relative;
+}
+
+#requestUp {
+    display: none;
+}
+
+.friendRequest {
+    display: none;
+    height: fit-content;
+    background-color: #8e8d8d;
+}
+
+.friends {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.friend__remove {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.friend__username {
+    margin-left: 5px;
+    margin-right: 50px;
+    width: 70px;
+    font-size: 13px;
+}
+
+.friend__profile_pic {
+    display: flex;
+    align-items: center;
+}
+
+.lng {
+    position: relative;
+}
+
+.logout-toggle {
+    display: none;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logout i {
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+}
+
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu {
+        left: -0%;
+    }
+
+    nav.active .nav-bar .navLogo a {
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle {
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-toggle .siderbarClose {
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a {
+        display: block;
+        margin-top: 20px;
+    }
+
+    #wide {
+        display: none;
+    }
+
+    .profile-toggle img {
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+        border: 1px solid #ccc;
+    }
+
+    .logout {
+        display: none;
+    }
+
+    nav.active .logout-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logout-toggle i {
+        position: fixed;
+        bottom: 10px;
+        left: 20%;
+        color: var(--text-color);
+        font-size: 22px;
+        cursor: pointer;
+        padding: 10px;
+        transition: all 1s ease;
+    }
+}
+
+footer {
+    background-color: var(--body-color);
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    justify-content: end;
+    display: flex;
+    background-color: var(--body-color);
+}
+
+/* Styling for the selected option */
+.select-selected {
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+}
+
+/* Styling for the options container */
+.select-options {
+    display: none;
+    position: absolute;
+    background-color: var(--nav-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    border-radius: 6px;
+    bottom: 100%;
+}
+
+/* Styling for each option */
+.select-options div {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* Highlight selected option */
+.select-options div:hover {
+    background-color: #f4f4f4;
+}

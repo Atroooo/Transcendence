@@ -1,0 +1,29 @@
+<div class="login">
+    <div class="sign-up form">
+        <h3>pong</h3>
+        <h5 data-i18n="startToPlay">Commencez une partie de Pong en ligne!</h5>
+        <form id="formLogin">
+            <div class="input-group">
+                <input type="text" placeholder="Pseudo" id="name" data-i18n-placeholder="placeholder.username" maxlength="15">
+                <span id="nameError"></span>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Mot de passe" id="password" data-i18n-placeholder="placeholder.password">
+                <span id="passError"></span>
+                <a class="forgotPassword" data-i18n="forgotPassword" href="/forgot-password">mot de passe oublié</a>
+            </div>
+            <div class="primaryButton">
+                <button id="formButtonMain" type="submit" data-i18n="connectFormButton">Se connecter</button>
+            </div>
+            <div class="error" id="error"></div>
+            <div class="line-with-text" data-i18n="orSeparator">OU</div>
+            <div class="button42">
+                <button id="formButtonSecond42" type="button"><img src="/static/assets/settings/42_Logo.svg"></button>
+            </div>
+            <h4 data-i18n="noAccountRegister">Pas de compte?</h4>
+            <div class="secondaryButton">
+                <button id="formButtonSecond" type="button" data-i18n="noAccountRegisterButton">S'inscrire</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="register">
+    <div class="sign-up form">
+        <h3 data-i18n="loginFormTitle">Inscrivez-vous</h3>
+        <h5 data-i18n="loginFormSubTitle">Et commencer une partie de Pong en ligne!</h4>
+            <form id="formRegister">
+                <div class="input-group">
+                    <input type="text" id="name" data-i18n-placeholder="placeholder.username" maxlength="15">
+                    <span class="formError" data-i18n="nameExists" id="nameError"></span>
+                    <span class="iconCheck" id="nIcon"><img src="/static/assets/settings/icons8-check-48.png"></span>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" data-i18n-placeholder="placeholder.email">
+                    <span class="formError" data-i18n="mailForm" id="mailForm"></span>
+                    <span class="formError" data-i18n="mailError" id="mailError"></span>
+                    <span class="iconCheck" id="mIcon"><img src="/static/assets/settings/icons8-check-48.png"></span>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" data-i18n-placeholder="placeholder.password">
+                    <span class="formError" data-i18n="passwordWeak" id="passError"></span>
+                    <span class="iconCheck" id="pIcon"><img src="/static/assets/settings/icons8-check-48.png"></span>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="passwordCheck" data-i18n-placeholder="placeholder.confirmPassword">
+                    <span class="formError" data-i18n="passSimilar" id="passCheckError"></span>
+                    <span class="formError" data-i18n="passNotMatch" id="passNotMatch"></span>
+                    <span class="iconCheck" id="pIconCheck"><img src="/static/assets/settings/icons8-check-48.png"></span>
+                </div>
+                <div class="primaryButton">
+                    <button id="formButtonMain" type="submit" data-i18n="createAccount">Créer un compte</button>
+                </div>
+                <div class="error" id="error"></div>
+                <div class="line-with-text" data-i18n="orSeparator">OU</div>
+                <div class="button42">
+                    <button id="formButtonSecond42" type="button"><img src="/static/assets/settings/42_Logo.svg"></button>
+                </div>
+                <h4 data-i18n="alreadyRegistered">Vous avez déjà un compte?</h4>
+                <div class="secondaryButton">
+                    <button id="formButtonSecond" type="button" data-i18n="connectFormButton">Se connecter</button>
+                </div>
+            </form>
+        </div>
+</div>

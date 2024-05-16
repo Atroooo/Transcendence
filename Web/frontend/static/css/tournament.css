@@ -1,0 +1,407 @@
+.notify {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    box-shadow: 0 0 2px 2px rgba(190, 186, 186, 0.5);
+    transition: opacity 0.5s ease;
+}
+
+.left, .left_next {
+    width: 100%;
+    border-radius: 6px;
+    margin: 5px 5px 5px 5px;
+    overflow: auto;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.no__tournament {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 30px;
+    color: var(--text-color-toggle);
+}
+
+.tournament__title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 500;
+    color: var(--text-color-toggle);
+    padding: 10px 0px 15px 0px;
+}
+
+.tournament__list {
+    color: var(--text-color-toggle);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.tournament__list_title {
+    font-size: x-large;
+    margin-bottom: 10px;
+}
+
+.tournament__p_create {
+    color: var(--text-color-toggle);
+}
+
+.tournament__input {
+    padding: 10px;
+    width: 50%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #777777;
+}
+
+.tournament__input:hover {
+    box-shadow: 0 0 2px 2px rgba(190, 186, 186, 0.5);
+}
+
+.tournament__option_button,
+.tournament__create {
+    font-weight: bold;
+    color: black;
+    border-radius: 10px;
+    background-color: var(--toggle-color);
+    width: 90px;
+    padding: 15px;
+    margin: 25px;
+    font-size: 25px;
+    transition: 0.25s ease;
+    cursor: pointer;
+    border: none;
+    box-shadow: var(--boxShadow, inset 0 calc(var(--borderHeight, .3rem)*-1) 0 0 rgba(0, 0, 0, .2));
+}
+
+.options_players {
+    display: flex;
+    flex-direction: column;
+}
+
+.tournament__option_button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 2px 2px rgba(190, 186, 186, 0.5);
+}
+
+.tournament__create {
+    background-color: var(--nav-color);
+    color: var(--toggle-color);
+    width: 25%;
+    padding: 20px;
+}
+
+.tournament__create:hover {
+    box-shadow: none;
+}
+
+.right {
+    width: 40%;
+}
+
+.top, 
+.top_public {
+    overflow: auto;
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.top_public {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.tournament__list_joined {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    width: 80%;
+    margin: 1% 10% 0 10%;
+    padding: 5px;
+    list-style: none;
+    background: var(--primary-color-contrast);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 1) 77%, rgba(34, 34, 34, 1) 79%);
+    box-shadow: var(--boxShadow, inset 0 calc(var(--borderHeight, .1rem)*-1) 0 0 rgba(0, 0, 0, .2));
+    padding: 15px;
+    border-radius: 10px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.tournament__list_joined:hover {
+    box-shadow: 0 0 2px 2px rgba(190, 186, 186, 0.5);
+    transform: scale(1.05);
+}
+
+.tournament__public_title {
+    font-size: medium;
+    margin-top: 15px;
+}
+
+@media (max-width: 1500px) {
+    .tournament__list_joined {
+        margin: 1% 10% 0 10%;
+        width: 80%;
+    }
+
+    .left {
+        justify-content: space-evenly;
+    }
+
+    .top {
+        justify-content: flex-start;
+        height: 50%;
+    }
+
+    .bottom {
+        height: 50%;
+    }
+
+    #footer {
+        height: 40px;
+    }
+
+}
+
+@media (max-width: 1000px) {
+
+    .container {
+        flex-direction: column;
+        height: fit-content;
+        overflow: auto;
+        margin-right: 10px;
+    }
+
+    .tournament__title {
+        font-size: large;
+    }
+
+    .left {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        overflow: auto;
+    }
+    
+    .left,
+    .right {
+        width: 100%;
+        height: fit-content;
+        overflow: auto;
+    }
+    
+    .top {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        background-color: lightgreen;
+        overflow: auto;
+        height: fit-content;
+    }
+    
+    .bottom {
+        background-color: lightyellow;
+        height: fit-content;
+        overflow: auto;
+    }
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    color: var(--text-color);
+    margin-top: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    box-shadow: var(--boxShadow, inset 0 calc(var(--borderHeight, .5rem)*-1) 0 0 rgba(0, 0, 0, .2));
+    background-color: var(--primary-color-light);
+    border: 1px solid var(--body-color);
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px;
+    width: 50%;
+    height: 200px;
+    cursor: pointer;
+}
+
+.container:hover {
+    box-shadow: none;
+}
+
+/* Active container styles */
+.container.active {
+    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#tournament__svg,
+#tournament__svg_bis {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+#arrow-next,
+#arrow-left,
+#arrow-nextJoin,
+#arrow-leftJoin {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+#arrow-left,
+#arrow-leftJoin,
+#arrow-nextJoin {
+    display: none;
+}
+
+.no__history,
+.no__history_ether {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.history::-webkit-scrollbar {
+    width: 8px;
+}
+
+.history::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    border-radius: 100px;
+}
+
+.history::-webkit-scrollbar-thumb {
+    background-color: var(--nav-color);
+    border-radius: 100px;
+    height: 60px;
+}
+
+.history {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 45vh;
+    overflow: auto;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 4px #707070;
+    background-color: var(--primary-color-contrast);
+    margin: 20px;
+    width: 90%;
+}
+
+.history li {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 30px;
+    box-shadow: 2px 2px 4px #707070;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color-light);
+    position: relative;
+    border-radius: 30px;
+}
+
+.history li.hidden {
+    opacity: 0;
+}
+
+.history img {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+
+.tournament__name {
+    font-weight: 600;
+    background-color: var(--nav-color);
+    padding: 20px;
+    border-radius: 30px;
+    color: white;
+}
+
+.tournament__winner {
+    position: relative;
+    font-weight: 600;
+    background-color: var(--nav-color);
+    padding: 20px;
+    border-radius: 30px;
+    color: white;
+}
+
+.tournament__winner img {
+    position: absolute;
+    transform: translate(50%);
+    height: 20px;
+    width: 20px;
+}
+
+.tournament__hash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.tournament__hash img {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+
+.no__history img {
+    height: 500px;
+    width: 500px;
+}
+
+/* Content styles */
+.container p, .top, .top_public, .history, .no__history, .info, .no__history_ether {
+    display: none;
+}
+
+/* Content shown when container is active */
+.container.active p, .container.active img, .container.active .info, .container.active .top, .container.active .history, .container.active .no__history, .container.active .no__history_ether {
+    display: flex;
+}

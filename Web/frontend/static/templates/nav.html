@@ -1,0 +1,74 @@
+<header>
+    <nav>
+        <div class="nav-bar">
+            <div class="profile" id="wide">
+                <a href="/settings">
+                    <img src="" alt="Profile" id="profilePictureNav">
+                </a>
+            </div>
+            <i class='bx bx-menu sidebarOpen'></i>
+            <span class="logo navLogo"><a href="/">pong</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <div class="profile-toggle">
+                        <a href="/settings">
+                            <img src="" alt="Profile" id="ProfilePictureToggle">
+                        </a>
+                    </div>
+                    <span class="logo"><a href="/">pong</a></span>
+                    <i class='bx bx-x siderbarClose' ></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="/ai-game" data-i18n="AI"></a></li>
+                    <li><a href="/multiplayer-game" data-i18n="playLink"></a></li>
+                    <li><a href="/tournament" data-i18n="tournamentLink"></a></li>
+                </ul>
+
+                <div class="logout-toggle" id="logout">
+                    <i class='bx bx-log-out' style='color:var(--text-color)'></i>
+                </div>
+            </div>
+            <div class="darkLight-lng">
+                <div class="dark-light">
+                    <i class='bx bx-moon sun'></i>
+                    <i class='bx bx-sun moon'></i>
+                </div>
+                <div class="friendlist">
+                    <i class='bx bxs-contact' id="friendListDisplay">
+                        <div class="arrow"></div>
+                        <div class="displayList">
+                            <div class="title">
+                                <span data-i18n="friends"></span>
+                            </div>
+                            <div class="addFriends">
+                                <span class="friendTitle" data-i18n="addFriend"></span>
+                                <i class='bx bx-user-plus bx-xl' id="addFriendIconShow"></i>
+                                <input class="friendInput" type="text" id="addFriendInput" data-i18n-placeholder="placeholder.username" maxlength="15">
+                                <i class='bx bx-user-plus bx-xl' id="addFriendIconHide"></i>
+                                <i class='bx bx-x bx-xl' id="crossFriendIconHide"></i>
+                            </div>
+                            <div class="request">
+                                <span data-i18n="friendRequest"></span>
+                                <i class='bx bx-caret-down bx-xl' id="requestDown"></i>
+                                <i class='bx bx-caret-up bx-xl' id="requestUp"></i>
+                            </div>
+                            <div class="friendRequest">
+                            </div>
+                            <div class="friends">
+                                <li style="list-style: none;">
+                                    <span class="noFriends" data-i18n="noFriends"></span>
+                                </li>
+                            </div>
+                        </div>
+                    </i>
+                    <i class='bx bxs-circle' id="friend__notification"></i>
+                </div>
+            </div>
+            <div class="logout" id="logout">
+                <i class='bx bx-log-out' style='color:var(--text-color)'></i>
+            </div>
+        </div>
+    </nav>
+</header>

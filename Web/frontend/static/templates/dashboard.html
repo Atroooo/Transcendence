@@ -1,0 +1,40 @@
+<div class="game-container">
+    <div class="stop__local_game">
+        <button class="local__create" id="stop-game">
+            <i class="bx bx-exit bx-xxl"></i>
+        </button>
+    </div>
+    <div class="player-win">
+        <div class="display__result_container">
+            <img src="/static/assets/settings/error.svg" id="closeWinWindow" style="height: 5%; position: absolute; top:27.5%; cursor: pointer;">
+            <div data-i18n="win" class="win__pixel">You win</div>  
+            <img src="/static/assets/settings/game.svg">
+            <button data-i18n="play__again" class="primaryButton" id="play-again">Play Again!</button>
+        </div>
+    </div>
+    <div class="player-lost">
+        <div class="display__result_container">
+            <img src="/static/assets/settings/error.svg" id="closeLoseWindow" style="height: 5%; position: absolute; top:27.5%; cursor: pointer;">
+            <div data-i18n="lose" class="lose__pixel">You lose</div>
+            <img src="/static/assets/settings/game.svg">
+            <button data-i18n="play__again" class="primaryButton" id="play-again">Play Again!</button>
+        </div>
+    </div>
+    <div class="selectPlayers">
+        <span data-i18n="dashboard__number_of_players" class="selectPlayers__title"></span>
+        <button data-i18n="dashboard__start" class="local__values_players" value="1"></button>
+    </div>
+    
+    <div class="selectPoints">
+        <span data-i18n="dashboard__number_of_points" class="selectPoints__title"></span>
+        <button class="local__values_points" value="5">5</button>
+        <button class="local__values_points" value="10">10</button>
+        <button class="local__values_points" value="15">15</button>
+    </div>
+    <canvas id="canvas">
+        <span class="local__player" id="player1"></span>
+        <em id="player1-score">0</em>
+        <em id="player2-score">0</em>
+        <span class="local__player" id="player2"></span>
+    </canvas>
+</div>

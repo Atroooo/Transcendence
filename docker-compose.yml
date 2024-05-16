@@ -1,0 +1,75 @@
+networks:
+    transcendence_network:
+        driver: bridge
+
+volumes:
+    postgress_data:
+    backend_data:
+
+services:
+    postgres:
+        container_name: database
+        image: postgres:16.0-bookworm
+        environment:
+            - POSTGRES_DB=transcendence
+            - POSTGRES_USER=postgresTranscendence
+            - POSTGRES_PASSWORD=postgresTranscendence123
+        ports:
+            - "5432:5432"
+        volumes:
+            - postgress_data:/var/lib/postgresql/data
+        restart: always
+        networks:
+            - transcendence_network
+
+    backend:
+        build:
+            context: .
+            dockerfile: ./Docker/backend/Dockerfile
+        container_name: backend
+        env_file:
+            - .env
+        volumes:
+            - ./Web/backend:/volumeBackend
+            - backend_data:/tmp
+        ports:
+            - "8000:8000"
+        environment:
+            - CELERY_BROKER_URL=redis://redis:6380/0
+        image: backend
+        restart: always
+        depends_on:
+            - postgres
+            - redis
+        networks:
+            - transcendence_network
+
+    nginx:
+        build:
+            context: .
+            dockerfile: ./Docker/nginx/Dockerfile
+        volumes:
+            - ./Web/backend:/volumeBackend/
+            - backend_data:/tmp
+        depends_on:
+            - backend
+        ports:
+            - "8443:8443"
+        networks:
+            - transcendence_network
+        image: nginx
+        container_name: nginx
+        restart: always
+
+    redis:
+        container_name: redis
+        build:
+            context: .
+            dockerfile: ./Docker/redis/Dockerfile
+        ports:
+            - "6380:6380"
+        expose:
+            - "6380"
+        restart: always
+        networks:
+            - transcendence_network
