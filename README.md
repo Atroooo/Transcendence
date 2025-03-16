@@ -1,7 +1,7 @@
 Final project for the Commun Core at the 42 School.
 Made with @neoff69 and @JulesLaisne
 
-This project aims to create a dockerized website that allows users to set up an account, see statistics, play games of Pong and also play tournaments. 
+This project aims to create a dockerized website that allows users to set up an account, see statistics, play games of Pong and also play tournaments. The tournament are saved on the ETH blockchain.
 The project was coded mainly in Python using Django and Javascript. 
 I also trained an AI to play Pong against the player using Python (pygame and NEAT library).
 
